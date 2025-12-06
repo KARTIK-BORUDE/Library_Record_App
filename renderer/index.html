@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management Application</title>
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
+</head>
+
+<body class="">
+    <div class="container">
+        <div class="mt-5 row justify-content-center heading offset-1">
+
+            <h1 class="col-md-12"> <img src="../Assets/images/logo.jpeg" alt="Img"> Government Polytechnic
+                Chh.Sambhajinagar </h1>
+        </div>
+        <div class="main-content row justify-content-center">
+            <div class="row col-lg-10 col-md-6">
+                <div class="card-custom">
+                    <h3>Steps :</h3>
+                    <ol class="steps-list">
+                        <li>Fill the form</li>
+                        <li>Click on Add Book</li>
+                        <li>Pop-up will open</li>
+                        <li>Click on OK</li>
+                        <li>Book will be added to the database</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-6">
+                <div class="card-custom">
+                    <h3>Add A Book</h3>
+                    <form method="POST" action="#" class="needs-validation" novalidate>
+                        <!-- =========================
+                             01. TEXT FIELDS
+                             ========================= -->
+                        <!-- Row 1: Title, Author -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" id="title" class="form-control" required
+                                    placeholder="Enter book title">
+                                <div class="invalid-feedback">Please Enter Title</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="Author" class="form-label">Author</label>
+                                <input id="Author" type="text" class="form-control" required
+                                    placeholder="Enter author name">
+                                <div class="invalid-feedback">Please Enter Author</div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Row 3: for, Location, Lang Code -->
+                        <div class="row mb-3">
+
+                            <div class="col-md-6 mb-6">
+                                <label for="location" class="form-label">Location</label>
+                                <input id="location" class="form-control" required placeholder="Shelf/Rack location">
+                                <div class="invalid-feedback">Please Enter Location</div>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                                <label for="publisher" class="form-label">Publisher</label>
+                                <input id="publisher" class="form-control" required placeholder="Publisher">
+                                <div class="invalid-feedback">Please Enter Publisher</div>
+                            </div>
+
+                        </div>
+
+                        <hr class="my-4">
+
+                        <!-- =========================
+                             02. NUMBER FIELDS
+                             ========================= -->
+                        <!-- Row 4: Accession, Copies, Bill No -->
+                        <div class="row mb-3">
+                            <div class="col-md-4 mb-3">
+                                <label for="Accession_number" class="form-label">Accession Number</label>
+                                <input id="Accession_number" type="number" class="form-control" required
+                                    placeholder="Enter Accession Number">
+                                <div class="invalid-feedback">Please Enter Accession Number</div>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label for="bill-no" class="form-label">Bill No: </label>
+                                <input type="number" min="1" id="bill-no" class="form-control" required
+                                    placeholder="Enter Bill No">
+                                <div class="invalid-feedback">Please Enter Bill No</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="cost" class="form-label">Cost In Rupees (Rs): </label>
+                                <input type="number" min="1" id="cost" class="form-control" required
+                                    placeholder="Enter Cost">
+                                <div class="invalid-feedback">Please Enter Cost</div>
+                            </div>
+                        </div>
+
+
+                        <!-- Keep Year with numbers -->
+
+
+                        <hr class="my-4">
+
+                        <!-- =========================
+                             03. DATE & SELECT FIELDS
+                             ========================= -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-6">
+                                <label for="bill-date" class="form-label">Bill Date: </label>
+                                <input type="date" id="bill-date" class="form-control" required
+                                    placeholder="Enter Bill Date">
+                                <div class="invalid-feedback">Please Enter Bill Date</div>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                                <label for="purchase_date" class="form-label">Purchase Date: </label>
+                                <input id="purchase_date" type="date" min="1995-01-01" class="form-control" required>
+                                <div class="invalid-feedback">Please Enter Purchase Date</div>
+                            </div>
+
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="gap-2 d-md-flex justify-content-md-end">
+
+                            <!-- View Books BUTTON (NOT submit) -->
+                            <button type="button" class="btn btn-primary btn-primary-custom text-white gap-5"
+                                onclick="window.location.href='show.html'">
+                                View Books
+                            </button>
+
+                            <!-- Add Book BUTTON (Submit) -->
+                            <button type="submit" id="add-btn"
+                                class="btn btn-primary btn-primary-custom text-white gap-5">
+                                Add Book
+                            </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5 mb-4 footer-custom ">
+        <p class=" mb-0 ">Developed And Maintained By CO 2023</p>
+    </footer>
+    <script src="../Assets/js/index.js"></script>
+    <script src="../Assets/js/validation.js"></script>
+</body>
+
+
+</html>

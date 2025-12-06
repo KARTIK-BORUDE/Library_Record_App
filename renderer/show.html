@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/show.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-3 row justify-content-center heading offset-1">
+            <h1 class="col-md-12 mt-4 offset-0"> <img src="../Assets/images/logo.jpeg" alt="Img"> Government
+                Polytechnic
+                Chh.Sambhajinagar </h1>
+            <div class="d-flex justify-content-between align-items-center mt-5">
+                <h2 class="all-book-heading mb-0">All Books : </h2>
+                <a href="index.html" class="btn btn-primary btn-back">Back to Add Books</a>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10 col-md-12">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </span>
+                    <input type="text" id="search-input" class="form-control"
+                        placeholder="Search by title, author, Accession_number, publisher, category, or Anything ">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container table-responsive mt-4 overflow-scroll">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Accession_number</th>
+                        <th>Publisher</th>
+
+
+
+                        <th>Purchase_date</th>
+
+
+                        <th>Cost</th>
+                        <th>Location</th>
+
+
+                        <th>Bill No</th>
+                        <th>Bill Date</th>
+                        <th>Action</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="books-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="text-center mt-5 mb-4 footer-custom">
+        <p class=" mb-0">Developed And Maintained By CO 2023</p>
+    </footer>
+    <script src="../Assets/js/show.js"></script>
+</body>
+
+</html>

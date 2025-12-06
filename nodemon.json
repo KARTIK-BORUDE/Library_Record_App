@@ -1,0 +1,13 @@
+{
+    "ignore": [
+        "node_modules/**/*",
+        "build/**/*",
+        "dist/**/*"
+    ],
+    "watch": [
+        ".js",
+        ".html",
+        ".css",
+        ".json"
+    ]
+}

@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+
+# Electron build outputs
+dist/
+build/
+release/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Electron cache
+.cache/
+electron-cache/
+.electron/
+
+# Installer files
+*.exe
+*.dmg
+*.AppImage
+
+# Temporary files
+temp/
+tmp/
+
+# Coverage reports
+coverage/
+
+# SQLite / local DB files (if used)
+*.sqlite
+*.db
+
+# Excel / local data files (optional – enable if required)
+# *.xlsx
+# *.csv
+
+# Backup files
+*.bak
