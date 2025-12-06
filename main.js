@@ -55,8 +55,7 @@ function createWindow() {
 app.whenReady().then(() => {
     folderPath = path.join(app.getPath('documents'), 'Library');
     excel_path = path.join(folderPath, 'books.xlsx');
-    console.log('MODE:', app.isPackaged ? 'PACKAGED' : 'DEV');
-    console.log('Excel Path:', excel_path);
+
 
     createExcelIfNotExists();
     createWindow();
