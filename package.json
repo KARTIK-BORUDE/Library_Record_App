@@ -1,5 +1,5 @@
 {
-  "name": "library_record_app",
+  "name": "library-record-app",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
@@ -21,13 +21,13 @@
   },
   "author": "kartik",
   "license": "ISC",
-  "description": "",
+  "description": "It a simple electron app for making digital record of the books for colleage",
   "devDependencies": {
-    "@e965/xlsx": "^0.20.3",
     "electron": "^38.7.2",
     "electron-builder": "^26.0.12"
   },
   "dependencies": {
+    "@e965/xlsx": "^0.20.3",
     "bootstrap": "^5.3.8",
     "nodemon": "^3.1.11"
   }
