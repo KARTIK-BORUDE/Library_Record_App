@@ -7,7 +7,6 @@ let folderPath;
 let excel_path;
 let win;
 
-/* ---------- Excel Setup ---------- */
 function createExcelIfNotExists() {
     if (!fs.existsSync(folderPath)) {
         fs.mkdirSync(folderPath, { recursive: true });
@@ -21,28 +20,25 @@ function createExcelIfNotExists() {
     }
 }
 
-/* ---------- Window ---------- */
 function createWindow() {
     win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        show: false,
-        icon: path.join(__dirname, 'Assets/images/logo.ico'),
+        width: 1200,
+        height: 800,
+        show: true,
+        autoHideMenuBar: true,
+        icon: path.join(__dirname, 'Assets', 'images', 'logo.ico'),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
-            preload: path.join(__dirname, 'Assets/js/preload.js')
+            preload: path.join(__dirname, 'Assets', 'js', 'preload.js')
         }
     });
 
-    win.loadFile(path.join(__dirname, './renderer/index.html'));
+    win.loadFile(path.join(__dirname, 'renderer', 'index.html'));
 
     win.once('ready-to-show', () => {
         win.maximize();
-        win.show();
     });
-
-    win.removeMenu();
 
     if (app.isPackaged) {
         win.webContents.on('devtools-opened', () => {
@@ -51,17 +47,14 @@ function createWindow() {
     }
 }
 
-/* ---------- App Ready ---------- */
 app.whenReady().then(() => {
     folderPath = path.join(app.getPath('documents'), 'Library');
     excel_path = path.join(folderPath, 'books.xlsx');
-
 
     createExcelIfNotExists();
     createWindow();
 });
 
-/* ---------- IPC: Add Book ---------- */
 ipcMain.handle('Add-Book', async (event, book) => {
     try {
         createExcelIfNotExists();
@@ -87,11 +80,9 @@ ipcMain.handle('Add-Book', async (event, book) => {
     }
 });
 
-/* ---------- IPC: Get All Books ---------- */
 ipcMain.handle('Get-All-Books', async () => {
     try {
         createExcelIfNotExists();
-
         const wb = XLSX.readFile(excel_path);
         const ws = wb.Sheets['Books'];
         return XLSX.utils.sheet_to_json(ws);
@@ -101,13 +92,12 @@ ipcMain.handle('Get-All-Books', async () => {
     }
 });
 
-/* ---------- IPC: Delete Book ---------- */
 ipcMain.handle('Delete-Book', async (event, ac_id) => {
     try {
         const wb = XLSX.readFile(excel_path);
         const ws = wb.Sheets['Books'];
-
         let data = XLSX.utils.sheet_to_json(ws);
+
         data = data.filter(
             book => String(book.Assession_Number) !== String(ac_id)
         );
@@ -122,9 +112,6 @@ ipcMain.handle('Delete-Book', async (event, ac_id) => {
     }
 });
 
-/* ---------- Quit ---------- */
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+    if (process.platform !== 'darwin') app.quit();
 });

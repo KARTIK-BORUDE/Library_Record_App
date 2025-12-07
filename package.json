@@ -5,14 +5,27 @@
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "library": "nodemon --exec electron ."
+    "library": "nodemon --exec electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.example.library",
+    "productName": "Library Record App",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "Assets/images/logo.ico"
+    }
   },
   "author": "kartik",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@e965/xlsx": "^0.20.3",
-    "electron": "^38.7.2"
+    "electron": "^38.7.2",
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
