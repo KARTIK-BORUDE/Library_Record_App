@@ -28,9 +28,9 @@ function displayBooks(booksToDisplay) {
             <td>${b.Purchase_date}</td>
            
             <td>${b.Cost}</td>
-            <td>${b.location}</td>
+            
           
-            <td>${b.bill_no}</td>
+           
             <td>${b.bill_date}</td>
 
             <td><button class="delete-btn btn btn-secondary" ac_id="${b.Assession_Number}">Delete</button></td>

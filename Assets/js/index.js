@@ -7,8 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         e.stopPropagation();
 
+        // Add validation class for Bootstrap visual feedback
+        form.classList.add('was-validated');
+
         if (!form.checkValidity()) {
-            // Validation failed
+            // Validation failed - form will show error messages
             return;
         }
 
@@ -18,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             Assession_Number: document.getElementById('Accession_number').value,
             Purchase_date: document.getElementById('purchase_date').value,
             Cost: document.getElementById('cost').value,
-            location: document.getElementById('location').value,
-            bill_no: document.getElementById('bill-no').value,
             bill_date: document.getElementById('bill-date').value,
             publisher: document.getElementById('publisher').value,
         }
@@ -28,11 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const result = await window.excelAPI.AddBook(book);
             if (result.success) {
-                alert('Book Added Successfully');
+                console.log('✅ Book Added Successfully');
                 // Clear form
                 form.reset();
                 form.classList.remove('was-validated');
+
+                // Show success feedback without blocking
+                const submitBtn = document.getElementById('add-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = '✓ Book Added!';
+                submitBtn.style.backgroundColor = '#28a745';
+
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.backgroundColor = '';
+                }, 2000);
             } else {
+                console.error('Error adding book:', result.error);
                 alert('Error adding book: ' + result.error);
             }
         } catch (error) {
